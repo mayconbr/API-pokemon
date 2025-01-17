@@ -16,7 +16,7 @@ Este projeto foi desenvolvido para fins de aprendizado e demonstração das capa
 ## 📖 Estrutura do Projeto
 
 - **Models**: Componentes que refletem os objetos do banco
-- **Views/**: Páginas principais (ex: Home, Detalhes do Sorteio)
+- **Views/**: Páginas principais (ex: Home, Login, Captura)
 - **styles/**: Arquivos de estilos, incluindo Tailwind
 - **tools/**: Funções utilitárias e hooks personalizados
 
