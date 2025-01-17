@@ -1,102 +1,36 @@
-Pokedex MVC
+# Pokedex 
 
-Este é um projeto de uma Pokedex desenvolvido com a arquitetura MVC (Model-View-Controller). A Pokedex permite que usuários se registrem, façam login, explorem uma lista de Pokémon e capturem seus Pokémon favoritos.
+Bem-vindo ao repositório do **Projeto Pokedex**! Este projeto é uma aplicação web construída com **.NET**, **EntityFramework**, e **Bootstrap**. 
 
-Funcionalidades
+Este projeto foi desenvolvido para fins de aprendizado e demonstração das capacidades do **.NET** em conjunto com **Bootstrap** e **CSS** para estilização.
 
-Autenticação de Usuários:
+## 🛠 Tecnologias Utilizadas
 
-Registro de novos usuários.
+| Tecnologia         | Descrição                                                          |
+|--------------------|--------------------------------------------------------------------|
+| **.NET**           | Framework para construção de sistemas web e apis                   |
+| **E. Framework**   | Biblioteca para manipulação de model.                              |
+| **Bootstrap   **   | Biblioteca CSS utilitário para estilização rápida e responsiva.    |
+| **JavaScript**     | Linguagem de programação utilizada em requisições no projeto .     |
 
-Login e logout de usuários.
+## 📖 Estrutura do Projeto
 
-Exploração de Pokémon:
+### src/
+- **Models**: Componentes que refletem os objetos do banco
+- **Views/**: Páginas principais (ex: Home, Detalhes do Sorteio)
+- **styles/**: Arquivos de estilos, incluindo Tailwind
+- **tools/**: Funções utilitárias e hooks personalizados
 
-Visualização de uma lista de Pokémon.
+### public/
+- **images/**: Imagens estáticas (logo, banners, etc.)
 
-Detalhes individuais de cada Pokémon.
+## 🌟 Funcionalidades
 
-Captura de Pokémon:
+- Exibição de resultados por pesquisa de pokemons.
+- Requisições de dados em tempo real utilizando POKEAPIr.
+- Design moderno e responsivo com **Bootstrap**.
+- Sistema de login e armazenamento dos pokemons capturados.
 
-Usuários podem capturar Pokémon e adicioná-los à sua coleção pessoal.
+## 🧑‍🏫 Objetivo do Projeto
 
-Lista de Pokémon capturados por usuário.
-
-Perfil do Usuário:
-
-Visualização e gerenciamento da coleção de Pokémon capturados.
-
-Tecnologias Utilizadas
-
-Back-end:
-
-Linguagem: C#
-
-Framework: ASP.NET Core MVC
-
-Banco de Dados: SQL Server
-
-Front-end:
-
-HTML5, CSS3, JavaScript
-
-Biblioteca de estilo: Bootstrap
-
-Outros:
-
-Sistema de controle de versão: Git
-
-Integração com API externa para dados de Pokémon (ex.: PokéAPI).
-
-Estrutura do Projeto
-
-Models: Classes que representam os dados do sistema, como Usuário, Pokémon e Captura.
-
-Views: Interfaces de usuário (HTML + Razor).
-
-Controllers: Gerenciamento das requisições HTTP e lógica de negócio.
-
-Como Executar o Projeto
-
-Clonar o Repositório:
-
-git clone https://github.com/seu-usuario/pokedex-mvc.git
-cd pokedex-mvc
-
-Configurar o Banco de Dados:
-
-Configure a string de conexão no arquivo appsettings.json.
-
-Execute as migrações para criar o banco de dados:
-
-dotnet ef database update
-
-Executar o Projeto:
-
-dotnet run
-
-O projeto será iniciado no endereço http://localhost:5000.
-
-Contribuição
-
-Contribuições são bem-vindas! Para contribuir:
-
-Fork o repositório.
-
-Crie uma nova branch para sua funcionalidade ou correção:
-
-git checkout -b minha-funcionalidade
-
-Commit suas alterações:
-
-git commit -m "Adiciona nova funcionalidade"
-
-Envie suas alterações:
-
-git push origin minha-funcionalidade
-
-Abra um Pull Request.
-
-Licença
-
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+Este projeto foi desenvolvido com o propósito de aprender e aplicar conceitos de .NET em um projeto real. 
