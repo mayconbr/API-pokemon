@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="pokeball-background">
+    <img src="~/images/poke-icon-background.png" alt="Fundo de Pokebola">
+</div>
+<div class="cont-search ">
+    <div>
+        <h1 class="tit-pagina">Qual pokemon você esta procurando ?</h1>
+    </div>
+    <div class="input-container">
+        <ion-icon name="search-outline"></ion-icon>
+        <input id="searchPokemon" type="text" class="search-pokemon" placeholder="Pesquisa por nome de  pokemon">
+    </div>
+</div>
+<div class="cont-filter" id="typeFilterContent">
+    <div class="type-filter">
+        <select id="typeSelect">
+            <option value=""></option>
+        </select>
+    </div>
+    <div class="location-filter">
+        <select id="habitatSelect">
+            <option value=""></option>
+        </select>
+    </div>
+    <div>
+        <button class="bt-clear" onclick="fetchFilteredPokemonIDs()"><ion-icon name="search-outline" class="search-outline"></ion-icon></button>
+    </div>
+</div>
+<div class="cont-card" id="cont-card">
+</div>
+<div class="bt-pag" id="btPag">
+    <button onclick="paginaAnterior()" id="anterior"> ⭠ Anterior</button>
+    <button onclick="proximaPagina()"> Próximo ⭢ </button>
+</div>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <div class="backgorund-modal" id="ColorModal">
+            
+            <div class="cont-info" id="ContentInfo">
+                <span class="close">&times;</span>
+                <h1 id="namePokemonModal"></h1>
+                <span class="card-type" id="cardTypeModal"></span>
+                <span class="number-pokemon" id="numberPokemonModal"></span>
+            </div>
+            <div class="cont-modal-img">
+                <img id="pokemonImageModal" src="#" class="pokemon-img-modal">
+            </div>
+        </div>
+        <div class="about-modal">
+            <div class="container-stats">
+                <h3>Status Base</h3>
+                <div class="stats">
+                    <p></p>
+                </div>
+            </div>
+            <div class="container-habities">
+                <h3>Habilidades</h3>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
