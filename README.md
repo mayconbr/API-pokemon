@@ -10,7 +10,7 @@ Este projeto foi desenvolvido para fins de aprendizado e demonstração das capa
 |--------------------|--------------------------------------------------------------------|
 | **.NET**           | Framework para construção de sistemas web e apis                   |
 | **E. Framework**   | Biblioteca para manipulação de model.                              |
-| **Bootstrap   **   | Biblioteca CSS utilitário para estilização rápida e responsiva.    |
+| **Bootstrap**      | Biblioteca CSS utilitário para estilização rápida e responsiva.    |
 | **JavaScript**     | Linguagem de programação utilizada em requisições no projeto .     |
 
 ## 📖 Estrutura do Projeto
