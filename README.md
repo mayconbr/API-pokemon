@@ -21,9 +21,6 @@ Este projeto foi desenvolvido para fins de aprendizado e demonstração das capa
 - **styles/**: Arquivos de estilos, incluindo Tailwind
 - **tools/**: Funções utilitárias e hooks personalizados
 
-### public/
-- **images/**: Imagens estáticas (logo, banners, etc.)
-
 ## 🌟 Funcionalidades
 
 - Exibição de resultados por pesquisa de pokemons.
