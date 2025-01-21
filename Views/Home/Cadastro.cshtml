@@ -1,6 +1,42 @@
 ﻿@{
     ViewData["Title"] = "Cadastro";
 }
-<div>
-
-</div>
+<login>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h2 class="text-center mb-4 text-danger fw-bold">Cadastro</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome de Treinador</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="opcoes" class="form-label">Selecione sua região</label>
+                            <select class="form-select" id="opcoes" required>
+                                <option value="" disabled selected>Escolha...</option>
+                                <option value="1">Opção 1</option>
+                                <option value="2">Opção 2</option>
+                                <option value="3">Opção 3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termos">
+                            <label class="form-check-label" for="termos">Aceito os termos e condições</label>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</login>
