@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\Pokemon\\Pokedex\\Pokedex.csproj": {}
+    "C:\\Users\\gpaud\\OneDrive\\Documentos\\GitHub\\API-pokemon\\Pokedex.csproj": {}
   },
   "projects": {
-    "C:\\Work\\Pokemon\\Pokedex\\Pokedex.csproj": {
+    "C:\\Users\\gpaud\\OneDrive\\Documentos\\GitHub\\API-pokemon\\Pokedex.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\Pokemon\\Pokedex\\Pokedex.csproj",
+        "projectUniqueName": "C:\\Users\\gpaud\\OneDrive\\Documentos\\GitHub\\API-pokemon\\Pokedex.csproj",
         "projectName": "Pokedex",
-        "projectPath": "C:\\Work\\Pokemon\\Pokedex\\Pokedex.csproj",
+        "projectPath": "C:\\Users\\gpaud\\OneDrive\\Documentos\\GitHub\\API-pokemon\\Pokedex.csproj",
         "packagesPath": "C:\\Users\\gpaud\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\Pokemon\\Pokedex\\obj\\",
+        "outputPath": "C:\\Users\\gpaud\\OneDrive\\Documentos\\GitHub\\API-pokemon\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gpaud\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -7,7 +7,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
 .pokeball-background {
     opacity: 0.08;
     position: fixed;
@@ -483,4 +482,31 @@ dialog {
     justify-content: flex-end;
 }
 
-@media 
+login {
+    background-image: url('/images/background2.jpg');
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .card {
+        border: 1px solid #E7E7E7;
+        border-radius: 15px;
+        box-shadow:  5px 5px 4px 6px rgba(0, 0.1, 0.1, 0.1);
+    }
+
+    .btn-primary {
+        background-color: #6c5ce7;
+        border-color: #6c5ce7;
+    }
+
+        .btn-primary:hover {
+            background-color: #5a4cc7;
+            border-color: #5a4cc7;
+        }
+
+    .form-control {
+        border-radius: 10px;
+    }

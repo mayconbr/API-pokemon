@@ -1,58 +1,23 @@
-﻿<style>
-    login {
-        background: linear-gradient(135deg, #74b9ff, #a29bfe);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial, sans-serif;
-    }
-
-    .card {
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-primary {
-        background-color: #6c5ce7;
-        border-color: #6c5ce7;
-    }
-
-        .btn-primary:hover {
-            background-color: #5a4cc7;
-            border-color: #5a4cc7;
-        }
-
-    .form-control {
-        border-radius: 10px;
-    }
-</style>
-<login>
+﻿<login>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card p-4">
                     <div class="text-center mb-4">
-                        <h3 class="text-primary">Login</h3>
+                        <img src="~/images/pokemon_logo.png" alt="Ícone" style="height: 80px; width:218px;"/>
                     </div>
                     <form>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            <h3 class="text-danger fw-bold">Entrar</h3>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                            <input type="password" class="form-control" id="password" placeholder="Senha">
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <button type="submit" class="btn btn-danger w-100">Login</button>
                     </form>
                     <div class="text-center mt-3">
-                        <p>Don't have an account? <a href="#" class="text-primary">Sign Up</a></p>
+                        <p>Não tem uma conta? <a href="#" class="text-danger">Criar conta</a></p>
                     </div>
                 </div>
             </div>
