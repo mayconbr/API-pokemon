@@ -21,6 +21,13 @@ bin/
 obj/
 out/
 
+# Excluir apenas Debug/net8.0
+bin/Debug/net8.0/
+
+# Arquivos de configuração de aplicação
+appsettings.json
+appsettings.Development.json
+
 # Arquivos de pacote
 *.nupkg
 *.snupkg
