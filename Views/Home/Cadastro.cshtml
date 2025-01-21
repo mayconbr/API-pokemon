@@ -13,30 +13,65 @@
                             <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" class="form-label">E-mail</label>
                             <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
                         </div>
                         <div class="mb-3">
                             <label for="senha" class="form-label">Senha</label>
                             <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+                            <div class="progress mt-2">
+                                <div id="strength-bar" class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small class="password-strength" id="password-strength-text"></small>
                         </div>
-                        <div class="mb-3">
-                            <label for="opcoes" class="form-label">Selecione sua região</label>
-                            <select class="form-select" id="opcoes" required>
-                                <option value="" disabled selected>Escolha...</option>
-                                <option value="1">Opção 1</option>
-                                <option value="2">Opção 2</option>
-                                <option value="3">Opção 3</option>
-                            </select>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="termos">
-                            <label class="form-check-label" for="termos">Aceito os termos e condições</label>
-                        </div>
-                        <button type="submit" class="btn btn-danger w-100">Cadastrar</button>
+                        <button type="submit" class="btn btn-danger w-100">Enviar</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </login>
+<script>
+    const senhaInput = document.getElementById('senha');
+    const strengthBar = document.getElementById('strength-bar');
+    const strengthText = document.getElementById('password-strength-text');
+
+    senhaInput.addEventListener('input', () => {
+        const senha = senhaInput.value;
+        const strength = calculatePasswordStrength(senha);
+        updateStrengthBar(strength);
+    });
+
+    function calculatePasswordStrength(password) {
+        let strength = 0;
+
+        // Regras para força da senha
+        if (password.length >= 8) strength += 25; // Comprimento mínimo
+        if (/[A-Z]/.test(password)) strength += 25; // Letras maiúsculas
+        if (/[a-z]/.test(password)) strength += 25; // Letras minúsculas
+        if (/[0-9]/.test(password) || /[\W_]/.test(password)) strength += 25; // Dígitos ou caracteres especiais
+
+        return strength;
+    }
+
+    function updateStrengthBar(strength) {
+        // Atualiza a largura da barra
+        strengthBar.style.width = `${strength}%`;
+        strengthBar.setAttribute('aria-valuenow', strength);
+
+        // Define a cor da barra com base na força
+        if (strength <= 25) {
+            strengthBar.className = 'progress-bar bg-danger';
+            strengthText.textContent = 'Fraca';
+        } else if (strength <= 50) {
+            strengthBar.className = 'progress-bar bg-warning';
+            strengthText.textContent = 'Moderada';
+        } else if (strength <= 75) {
+            strengthBar.className = 'progress-bar bg-info';
+            strengthText.textContent = 'Forte';
+        } else {
+            strengthBar.className = 'progress-bar bg-success';
+            strengthText.textContent = 'Muito forte';
+        }
+    }
+</script>
