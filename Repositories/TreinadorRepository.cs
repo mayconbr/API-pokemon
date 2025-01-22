@@ -1,6 +1,6 @@
 ﻿namespace Pokedex.Repositories
 {
-    public class TreinadorRepository
+    public class TreinadorInterface
     {
     }
 }
