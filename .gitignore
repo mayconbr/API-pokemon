@@ -79,5 +79,3 @@ secrets.json
 
 # Arquivos de log de depuração
 debug.log
-
-obj/
