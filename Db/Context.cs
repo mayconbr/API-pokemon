@@ -7,9 +7,9 @@ namespace Pokedex;
 
 public partial class Context : DbContext
 {
-   public DbSet<Pokemon> Pokemon { get; set; }
+   public DbSet<Pokemon> Pokemons { get; set; }
 
-    public DbSet<Treinador> Treinador { get; set; }
+    public DbSet<Treinador> Treinadores { get; set; }
 
     #region DB_FACTORY
     public Context()
