@@ -29,7 +29,7 @@ public class PokemonRepository : IPokemonRepository
         }
         catch (Exception)
         {
-            throw; // Deixa a exceção ser tratada pelo controller
+            throw;
         }
     }
 }

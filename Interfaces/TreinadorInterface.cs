@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Pokedex.Models;
-
+﻿using Pokedex.Models;
 namespace Pokedex.Interfaces
 {
-    public interface TreinadorInterface
+    public interface ITreinadorepository
     {
-
+       
     }
 }

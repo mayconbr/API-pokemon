@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 // Adicione o repositório ao container de serviços
 builder.Services.AddScoped<Context, Context>();
 builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
+builder.Services.AddScoped<ITreinadorepository, TreinadorRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
