@@ -10,5 +10,13 @@ namespace Pokedex.Models
         [DataMember]
         public long userId { get; set; }
         public virtual User? user { get; set; }
+        [DataMember]
+        public required string name { get; set; }
+        [DataMember]
+        public required string region { get; set; }
+        [DataMember]
+        public string? initialPokemon {  get; set; }
+        [DataMember]
+        public DateTime? creationDate { get; set; }
     }
 }

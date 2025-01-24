@@ -13,23 +13,22 @@ namespace Pokedex.Repositories
             _context = context;
         }
 
-        public Pokemon InsertTreinador(Pokemon request)
+        public Trainer InsertTreinador(Trainer request)
         {
             try
             {
-                var newPokemon = new Pokemon
+                var newTrainer = new Trainer
                 {
-                    trainerId = request.trainerId,
-                    pokemon = request.pokemon,
+                    userId =  request.userId,
                     name = request.name,
-                    pokedexNumber = request.pokedexNumber,
-                    type = request.type
+                    region = request.region,
+                    creationDate = request.creationDate,                            
                 };
 
-                _context.Pokemons.Add(newPokemon);
+                _context.Treiners.Add(newTrainer);
                 _context.SaveChanges();
 
-                return newPokemon;
+                return newTrainer;
             }
             catch (Exception)
             {
