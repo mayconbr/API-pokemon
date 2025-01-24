@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Pokedex.Models
 {
     [DataContract]
-    public class TableUsuario
+    public class User
     {
         [Key]
         public long id { get; set; }
