@@ -26,7 +26,6 @@ public class PokemonController : ControllerBase
 
             var newPokemon = _pokemonRepository.InsertPokemon(request);
 
-            // Retorna o Pokémon criado com status 201
             return CreatedAtAction(nameof(InsertPokemon), new { id = newPokemon.id }, newPokemon);
         }
         catch (Exception ex)

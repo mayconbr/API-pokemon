@@ -19,6 +19,8 @@ namespace Pokedex.Repositories
             {
                 var newPokemon = new Pokemon
                 {
+                    treinerId = request.treinerId,
+                    pokemon = request.pokemon,
                     name = request.name,
                     pokedexNumber = request.pokedexNumber,
                     type = request.type

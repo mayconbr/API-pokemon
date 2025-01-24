@@ -17,6 +17,8 @@ public class PokemonRepository : IPokemonRepository
         {
             var newPokemon = new Pokemon
             {
+                treinerId = request.treinerId,
+                pokemon = request.pokemon,
                 name = request.name,
                 pokedexNumber = request.pokedexNumber,
                 type = request.type
@@ -30,6 +32,71 @@ public class PokemonRepository : IPokemonRepository
         catch (Exception)
         {
             throw;
+        }
+    }
+
+    public Pokemon UpdatePokemon(Pokemon request)
+    {
+        try
+        {
+            var pokemon = _context.Pokemons.FirstOrDefault(p => p.id == request.id);
+
+            if (pokemon == null)
+            {
+                throw new Exception("Pokémon não encontrado!");
+            }
+            else
+            {
+                pokemon.name = request.name;
+
+                _context.Pokemons.Update(pokemon);
+                _context.SaveChanges();
+
+                return pokemon;
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+
+    public List<Pokemon> GetPokemonsByTrainer(long id)
+    {
+        try
+        {          
+            var pokemons = _context.Pokemons.Where(p => p.treinerId == id).ToList();
+          
+            if (pokemons == null || !pokemons.Any())
+            {
+                throw new Exception("Nenhum Pokémon encontrado para este treinador!");
+            }
+
+            return pokemons; 
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Erro ao buscar Pokémon: {ex.Message}");
+        }
+    }
+
+
+    public Pokemon GetPokemonById(int id)
+    {
+        try
+        {
+            var pokemon = _context.Pokemons.FirstOrDefault(p => p.id == id);
+
+            if (pokemon == null)
+            {
+                throw new Exception("Pokémon não encontrado!");
+            }
+
+            return pokemon;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Erro ao buscar Pokémon: {ex.Message}");
         }
     }
 }
