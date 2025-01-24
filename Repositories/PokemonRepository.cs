@@ -81,7 +81,7 @@ public class PokemonRepository : IPokemonRepository
     }
 
 
-    public Pokemon GetPokemonById(int id)
+    public Pokemon GetPokemonById(long id)
     {
         try
         {
