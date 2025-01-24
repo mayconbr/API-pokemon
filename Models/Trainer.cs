@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Pokedex.Models
 {
-    public class Treiner
+    public class Trainer
     {
         [Key]
         public long id { get; set; }

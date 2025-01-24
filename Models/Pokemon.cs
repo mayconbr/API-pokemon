@@ -9,8 +9,8 @@ namespace Pokedex.Models
         [Key]
         public long id { get; set; }
         [DataMember]
-        public long treinerId { get; set; }
-        public  virtual Treiner? treiner { get; set; }
+        public long trainerId { get; set; }
+        public  virtual Trainer? treiner { get; set; }
         [DataMember]
         public required string? name { get; set; }
         [DataMember]

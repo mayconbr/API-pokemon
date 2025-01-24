@@ -17,7 +17,7 @@ public class PokemonRepository : IPokemonRepository
         {
             var newPokemon = new Pokemon
             {
-                treinerId = request.treinerId,
+                trainerId = request.trainerId,
                 pokemon = request.pokemon,
                 name = request.name,
                 pokedexNumber = request.pokedexNumber,
@@ -65,7 +65,7 @@ public class PokemonRepository : IPokemonRepository
     {
         try
         {          
-            var pokemons = _context.Pokemons.Where(p => p.treinerId == id).ToList();
+            var pokemons = _context.Pokemons.Where(p => p.trainerId == id).ToList();
           
             if (pokemons == null || !pokemons.Any())
             {
