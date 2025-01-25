@@ -12,16 +12,19 @@ public class JwtTokenService
         _jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>();
     }
 
-    public string GenerateToken(string userId, string userRole)
+    public string GenerateToken(string userId, string username, string role)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.UTF8.GetBytes(_jwtSettings.Secret);
 
+        // Adicionar os claims personalizados
         var claims = new[]
         {
-            new Claim(ClaimTypes.NameIdentifier, userId),
-            new Claim(ClaimTypes.Role, userRole)
-        };
+        new Claim(ClaimTypes.NameIdentifier, userId), // ID do usuário
+        new Claim(ClaimTypes.Name, username),        // Nome do usuário
+        new Claim(ClaimTypes.Role, role),            // Papel/Role do usuário
+        new Claim("CustomClaim", "CustomValue")      // Outros claims personalizados
+    };
 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
@@ -35,4 +38,5 @@ public class JwtTokenService
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(token);
     }
+
 }
