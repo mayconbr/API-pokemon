@@ -17,8 +17,10 @@ Este projeto foi desenvolvido para fins de aprendizado e demonstração das capa
 
 - **Models**: Componentes que refletem os objetos do banco
 - **Views/**: Páginas principais (ex: Home, Login, Captura)
+- **Controllers**: Responsável por trabalhar com o Modelo para executar ações e/ou recuperar dados
 - **root/**: Arquivos de estilos, script js e bibliotecas de js, alem de imagens 
-- **tools/**: Funções utilitárias e hooks personalizados
+- **services/**: Funções utilitárias e hooks personalizados
+- **repositories/**: Funções que fazem interação com o banco
 
 ## 🌟 Funcionalidades
 
