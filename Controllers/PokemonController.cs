@@ -2,15 +2,18 @@ using Microsoft.AspNetCore.Mvc;
 using Pokedex.Interfaces;
 using Pokedex.Models;
 
-[ApiController]
-[Route("[controller]")]
-public class PokemonController : ControllerBase
+public class PokemonController : Controller
 {
     private readonly IPokemonRepository _pokemonRepository;
 
     public PokemonController(IPokemonRepository pokemonRepository)
     {
         _pokemonRepository = pokemonRepository;
+    }
+
+    public IActionResult Index()
+    {
+        return View();
     }
 
     [HttpPost]
