@@ -37,6 +37,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<Context, Context>();
 builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
 builder.Services.AddScoped<ITreinadorepository, TreinadorRepository>();
+builder.Services.AddScoped<JwtTokenService>();
+builder.Services.AddScoped<LoginRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

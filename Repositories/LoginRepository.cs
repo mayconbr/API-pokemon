@@ -1,6 +1,7 @@
 ﻿using Pokedex.Models;
 using Pokedex;
 using Pokedex.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 public class LoginRepository : ILoginInterface
 {
@@ -11,24 +12,22 @@ public class LoginRepository : ILoginInterface
         _context = context;
     }
 
-    public User GetUser(User user)
+    public async Task<User?> GetUser(User user)
     {
         try
         {
-            var FindUser = _context.Users.FirstOrDefault(p => p == user);
+            var findUser = await _context.Users.FirstOrDefaultAsync(u => u == user);
 
-            if (FindUser == null) 
-            {
-                throw new Exception("Usuário não encontrado!");
-            }
-
-            return FindUser;
+            return findUser;
         }
         catch (Exception ex)
         {
-            throw new Exception($"Erro ao buscar usuário: {ex.Message}");
+            throw new Exception($"Erro ao buscar usuário: {ex.Message}", ex);
         }
     }
 
-
+    public Task<User> GetUserAsync(User user)
+    {
+        throw new NotImplementedException();
+    }
 }

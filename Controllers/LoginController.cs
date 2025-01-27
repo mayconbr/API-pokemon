@@ -1,25 +1,30 @@
 
 using Microsoft.AspNetCore.Mvc;
+using Pokedex.Models;
 namespace Pokedex.Controllers
 {
     public class LoginController : Controller
     {
         private readonly JwtTokenService _jwtTokenService;
+        private readonly LoginRepository _loginRepository;
+
+        public LoginController(JwtTokenService jwtTokenService, LoginRepository loginRepository)
+        {
+            _jwtTokenService = jwtTokenService;
+            _loginRepository = loginRepository;
+        }
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public LoginController(JwtTokenService jwtTokenService)
-        {
-            _jwtTokenService = jwtTokenService;
-        }
-
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest loginRequest)
+        public async Task<IActionResult> Login([FromBody] User request)
         {
-            if (loginRequest.Username == "admin" && loginRequest.Password == "password")
+            var findUser = await _loginRepository.GetUser(request);
+
+            if (findUser != null)
             {
                 // Dados do usuário para os claims
                 string userId = "1";           

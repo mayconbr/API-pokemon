@@ -3,6 +3,6 @@ namespace Pokedex.Interfaces
 {
     public interface ILoginInterface
     {
-        User GetUser(User request);
+        Task<User?> GetUser(User user);
     }
 }
