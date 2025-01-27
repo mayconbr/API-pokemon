@@ -1,11 +1,5 @@
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Threading.Tasks;
-
-using Microsoft.AspNetCore.Mvc;
-
 namespace Pokedex.Controllers
 {
     public class LoginController : Controller
@@ -17,24 +11,20 @@ namespace Pokedex.Controllers
             return View();
         }
 
-        //public LoginController(JwtTokenService jwtTokenService)
-        //{
-        //    _jwtTokenService = jwtTokenService;
-        //}
+        public LoginController(JwtTokenService jwtTokenService)
+        {
+            _jwtTokenService = jwtTokenService;
+        }
 
-        /// <summary>
-        /// Endpoint para login e geração de token JWT.
-        /// </summary>
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest loginRequest)
         {
-            // Simulação de validação de usuário (substitua com sua lógica)
             if (loginRequest.Username == "admin" && loginRequest.Password == "password")
             {
                 // Dados do usuário para os claims
-                string userId = "1";           // ID do usuário (exemplo)
-                string username = "admin";     // Nome de usuário
-                string role = "Admin";         // Role/papel do usuário
+                string userId = "1";           
+                string username = "admin";     
+                string role = "Admin";         
 
                 // Gera o token JWT
                 var token = _jwtTokenService.GenerateToken(userId, username, role);
@@ -62,21 +52,15 @@ namespace Pokedex.Controllers
             return Unauthorized(new { Message = "Usuário ou senha inválidos" });
         }
 
-        /// <summary>
-        /// Endpoint para logout (remove o cookie do cliente).
-        /// </summary>
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-            Response.Cookies.Delete("jwt"); // Remove o cookie do cliente
+            Response.Cookies.Delete("jwt");
             return Ok(new { Message = "Logout realizado com sucesso" });
         }
     }
 }
 
-/// <summary>
-/// Modelo de requisição para login.
-/// </summary>
 public class LoginRequest
 {
     public string Username { get; set; }
