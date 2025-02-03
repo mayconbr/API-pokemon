@@ -161,4 +161,40 @@
     }
 
 
+        function enviarFormulario(form) {
+        const formData = new FormData(form);
+        const obj = {};
+
+        formData.forEach((value, key) => {
+            if (obj[key]) {
+                obj[key] = Array.isArray(obj[key]) ? [...obj[key], value] : [obj[key], value];
+            } else {
+                obj[key] = value;
+            }
+        });
+
+        const data = JSON.stringify(obj);
+
+        // Enviando os dados via AJAX (fetch)
+        fetch('/seu-endpoint', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: data
+        })
+        .then(response => response.json()) // Converte a resposta para JSON
+        .then(result => {
+            console.log('Resposta do servidor:', result);
+            alert('Formulário enviado com sucesso!');
+        })
+        .catch(error => {
+            console.error('Erro ao enviar formulário:', error);
+            alert('Erro ao enviar, tente novamente.');
+        });
+
+        return false; // Impede o recarregamento da página
+    }
+
+
 </script>
