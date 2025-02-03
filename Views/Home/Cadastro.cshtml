@@ -130,10 +130,35 @@
         });
     });
 
-        document.getElementById('meuForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita o recarregamento da página
-        const formDataObject = formToObject(this);
-        console.log(formDataObject);
-    });
+    function enviarFormulario(form) {
+        const formData = new FormData(form);
+        const obj = {};
+
+        formData.forEach((value, key) => {
+            if (obj[key]) {
+                obj[key] = Array.isArray(obj[key]) ? [...obj[key], value] : [obj[key], value];
+            } else {
+                obj[key] = value;
+            }
+        });
+
+        const data = JSON.stringify(obj);
+
+        // Enviando os dados via AJAX (fetch)
+        fetch('/seu-endpoint', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: data
+        })
+        .then(response => response.json()) // Converte a resposta para JSON
+        .then(result => {
+            let resposta = result; // Armazena o retorno na variável
+            console.log('Resposta do servidor:', resposta);
+        })
+        .catch(error => console.error('Erro ao enviar formulário:', error));
+    }
+
 
 </script>
