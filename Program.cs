@@ -4,6 +4,7 @@ using Pokedex;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +49,14 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+// Configura a conexão com o banco de dados
+var connectionString = builder.Configuration.GetConnectionString("Database");
+
+// Exemplo: Se estiver usando Entity Framework Core
+builder.Services.AddDbContext<Context>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
