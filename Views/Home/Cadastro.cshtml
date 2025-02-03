@@ -130,5 +130,10 @@
         });
     });
 
+        document.getElementById('meuForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita o recarregamento da página
+        const formDataObject = formToObject(this);
+        console.log(formDataObject);
+    });
 
 </script>
