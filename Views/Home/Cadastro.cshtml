@@ -7,7 +7,7 @@
             <div class="col-md-4">
                 <div class="card p-4">
                     <h2 class="text-center mb-4 text-danger fw-bold">Cadastro</h2>
-                    <form>
+                    <form id="meuForm" onsubmit="return enviarFormulario(this);">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome de Treinador</label>
                             <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
