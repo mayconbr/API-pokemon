@@ -36,5 +36,30 @@ namespace Pokedex.Controllers
             }
         }
 
+
+        [HttpPost]
+        [Route("UpdateTrainer")]
+        public IActionResult UpdateTreinador([FromBody] Trainer request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest("Dados inválidos enviados.");
+                }
+
+
+
+                var newTrainer = _treinadorRepository.InsertTrainer(request);
+
+                return Ok("Treinador criado com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao criar Pokémon: {ex.Message}");
+                return StatusCode(500, "Ocorreu um erro ao processar sua solicitação.");
+            }
+        }
+
     }
 }

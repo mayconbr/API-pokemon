@@ -35,5 +35,30 @@ namespace Pokedex.Repositories
                 throw;
             }
         }
+
+        public  async Task <Trainer> UpdateTrainer(Trainer request)
+        {
+            try
+            {
+                var trainer = await _context.Treiners.FirstOrDefaultAsync(x => x.id == request.id);
+
+                if (trainer == null)
+                {
+                    throw new Exception("Treinador não encontrado.");
+                }
+
+                trainer.userId = request.userId;
+                trainer.name = request.name;
+                trainer.region = request.region;
+                trainer.creationDate = request.creationDate;
+                _context.SaveChanges();
+
+                return trainer;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
