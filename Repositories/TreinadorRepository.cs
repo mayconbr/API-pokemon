@@ -60,5 +60,81 @@ namespace Pokedex.Repositories
                 throw;
             }
         }
+
+        public async Task<bool> DeleteTrainer(int Id)
+        {
+            try
+            {
+                var trainer = await _context.Treiners.FirstOrDefaultAsync(x => x.id == Id);
+
+                if (trainer == null)
+                {
+                    throw new Exception("Treinador não encontrado.");
+                }
+
+                _context.Treiners.Remove(trainer);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<bool> DeleteTrainer(long Id)
+        {
+            try
+            {
+                var trainer = await _context.Treiners.FirstOrDefaultAsync(x => x.id == Id);
+
+                if (trainer == null)
+                {
+                    throw new Exception("Treinador não encontrado.");
+                }
+
+                _context.Treiners.Remove(trainer);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<Trainer> GetTrainerById(long Id)
+        {
+            try
+            {
+                var user = await _context.Treiners.FirstOrDefaultAsync(x => x.id == Id);
+
+                if (user == null)
+                {
+                    throw new Exception("Usuário não encontrado.");
+                }
+
+                return user;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<List<Trainer>> GetAllTrainers()
+        {
+            try
+            {
+                return await _context.Treiners.ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }
