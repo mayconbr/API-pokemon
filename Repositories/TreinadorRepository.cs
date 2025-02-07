@@ -13,7 +13,7 @@ namespace Pokedex.Repositories
             _context = context;
         }
 
-        public Trainer InsertTreinador(Trainer request)
+        public Trainer InsertTrainer(Trainer request)
         {
             try
             {
