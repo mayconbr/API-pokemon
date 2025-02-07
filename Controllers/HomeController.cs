@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Pokedex.Models;
-using System.Diagnostics;
 
 namespace Pokedex.Controllers
 {

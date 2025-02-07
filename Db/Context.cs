@@ -16,10 +16,8 @@ public partial class Context : DbContext
     {
     }
 
-    public Context(DbContextOptions<Context> options)
-        : base(options)
-    {
-    }
+    //injecao de configuracao do context
+    public Context(DbContextOptions<Context> options): base(options){}
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
