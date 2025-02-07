@@ -50,7 +50,7 @@ namespace Pokedex.Controllers
 
 
 
-                var newTrainer = _treinadorRepository.InsertTrainer(request);
+                var newTrainer = _treinadorRepository.UpdateTrainer(request);
 
                 return Ok("Treinador criado com sucesso.");
             }
