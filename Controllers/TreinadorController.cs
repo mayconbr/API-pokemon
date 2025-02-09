@@ -15,21 +15,44 @@ namespace Pokedex.Controllers
         }
 
         [HttpPost]
-        [Route("CreateTreiandor")]
-        public IActionResult InsertTreinador([FromBody] Pokemon request)
+        [Route("CreateTrainer")]
+        public IActionResult InsertTreinador([FromBody] Trainer request)
         {
             try
             {
-                //if (request == null)
-                //{
-                //    return BadRequest("Dados inválidos enviados.");
-                //}
+                if (request == null)
+                {
+                    return BadRequest("Dados inválidos enviados.");
+                }
 
-                //var newPokemon = _treinadorRepository.InsertPokemon(request);
+                var newTrainer = _treinadorRepository.InsertTrainer(request);
 
-                //// Retorna o Pokémon criado com status 201
-                //return CreatedAtAction(nameof(InsertPokemon), new { id = newPokemon.id }, newPokemon);
+                return Ok("Treinador criado com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao criar Pokémon: {ex.Message}");
                 return StatusCode(500, "Ocorreu um erro ao processar sua solicitação.");
+            }
+        }
+
+
+        [HttpPost]
+        [Route("UpdateTrainer")]
+        public IActionResult UpdateTreinador([FromBody] Trainer request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest("Dados inválidos enviados.");
+                }
+
+
+
+                var newTrainer = _treinadorRepository.UpdateTrainer(request);
+
+                return Ok("Treinador criado com sucesso.");
             }
             catch (Exception ex)
             {
