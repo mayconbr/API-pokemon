@@ -61,7 +61,7 @@ namespace Pokedex.Repositories
             }
         }
 
-        public async Task<bool> DeleteTrainer(long Id)
+        public async Task<Trainer> DeleteTrainer(long Id)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace Pokedex.Repositories
                 _context.Treiners.Remove(trainer);
                 await _context.SaveChangesAsync();
 
-                return true;
+                return trainer;
             }
             catch (Exception)
             {
@@ -112,7 +112,6 @@ namespace Pokedex.Repositories
             {
                 throw;
             }
-        }
-
+        }     
     }
 }

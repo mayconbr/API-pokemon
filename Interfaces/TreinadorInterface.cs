@@ -6,5 +6,6 @@ namespace Pokedex.Interfaces
         Trainer InsertTrainer(Trainer request);
         Task<Trainer> UpdateTrainer(Trainer request);
         Task<Trainer> GetTrainerById(long Id);
+        Task<Trainer> DeleteTrainer(long Id);
     }
 }

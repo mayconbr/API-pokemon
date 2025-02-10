@@ -18,5 +18,7 @@ namespace Pokedex.Models
         public string? initialPokemon {  get; set; }
         [DataMember]
         public DateTime? creationDate { get; set; }
+        [DataMember]
+        public DateTime? dateDelete { get; set; }
     }
 }

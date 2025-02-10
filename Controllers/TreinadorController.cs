@@ -31,7 +31,7 @@ namespace Pokedex.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao criar Pokémon: {ex.Message}");
+                Console.WriteLine($"Erro ao criar treinador: {ex.Message}");
                 return StatusCode(500, "Ocorreu um erro ao processar sua solicitação.");
             }
         }
@@ -56,26 +56,25 @@ namespace Pokedex.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao criar Pokémon: {ex.Message}");
+                Console.WriteLine($"Erro ao atualizar treinador: {ex.Message}");
                 return StatusCode(500, "Ocorreu um erro ao processar sua solicitação.");
             }
         }
 
         [Route("DeleteTrainer")]
-        public IActionResult DeleteTreinador(long id)
+        public async Task<IActionResult> DeleteTreinador(long id)
         {
             try
-            {          
-                var newTrainer = _treinadorRepository.(id);
-
-                return Ok("Treinador criado com sucesso.");
+            {
+                return (IActionResult) await _treinadorRepository.DeleteTrainer(id); 
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao criar Pokémon: {ex.Message}");
+                Console.WriteLine($"Erro ao deletar Treinador: {ex.Message}");
                 return StatusCode(500, "Ocorreu um erro ao processar sua solicitação.");
             }
         }
+
 
     }
 }
