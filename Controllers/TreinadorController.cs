@@ -61,5 +61,21 @@ namespace Pokedex.Controllers
             }
         }
 
+        [Route("DeleteTrainer")]
+        public IActionResult DeleteTreinador(long id)
+        {
+            try
+            {          
+                var newTrainer = _treinadorRepository.(id);
+
+                return Ok("Treinador criado com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao criar Pokémon: {ex.Message}");
+                return StatusCode(500, "Ocorreu um erro ao processar sua solicitação.");
+            }
+        }
+
     }
 }
