@@ -6,28 +6,4 @@ using Microsoft.EntityFrameworkCore;
 public class LoginRepository : ILoginInterface
 {
     private readonly Context _context;
-
-    public LoginRepository(Context context)
-    {
-        _context = context;
-    }
-
-    public async Task<User?> GetUser(User user)
-    {
-        try
-        {
-            var findUser = await _context.Users.FirstOrDefaultAsync(u => u == user);
-
-            return findUser;
-        }
-        catch (Exception ex)
-        {
-            throw new Exception($"Erro ao buscar usuário: {ex.Message}", ex);
-        }
-    }
-
-    public Task<User> GetUserAsync(User user)
-    {
-        throw new NotImplementedException();
-    }
 }
