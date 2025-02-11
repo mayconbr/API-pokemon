@@ -3,11 +3,11 @@ using Pokedex;
 using Pokedex.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-public class LoginRepository : ILoginInterface
+public class UserRepository : ILoginInterface
 {
     private readonly Context _context;
 
-    public LoginRepository(Context context)
+    public UserRepository(Context context)
     {
         _context = context;
     }
@@ -24,10 +24,5 @@ public class LoginRepository : ILoginInterface
         {
             throw new Exception($"Erro ao buscar usuário: {ex.Message}", ex);
         }
-    }
-
-    public Task<User> GetUserAsync(User user)
-    {
-        throw new NotImplementedException();
     }
 }
