@@ -6,12 +6,12 @@ namespace Pokedex.Controllers
     public class LoginController : Controller
     {
         private readonly JwtTokenService _jwtTokenService;
-        private readonly LoginRepository _loginRepository;
+        private readonly UserRepository _userRepository;
 
-        public LoginController(JwtTokenService jwtTokenService, LoginRepository loginRepository)
+        public LoginController(JwtTokenService jwtTokenService, UserRepository userRepository)
         {
             _jwtTokenService = jwtTokenService;
-            _loginRepository = loginRepository;
+            _userRepository = userRepository;
         }
 
         public IActionResult Index()
@@ -20,9 +20,9 @@ namespace Pokedex.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] User request)
+        public async Task<IActionResult> Login([FromBody] User request, UserRepository userRepository)
         {
-            var findUser = await _loginRepository.GetUser(request);
+            var findUser = await userRepository.GetUser(request);
 
             if (findUser != null)
             {

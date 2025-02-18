@@ -46,7 +46,6 @@ var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSetting
     builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
     builder.Services.AddScoped<ITreinadorepository, TreinadorRepository>();
     builder.Services.AddScoped<JwtTokenService>();
-    builder.Services.AddScoped<LoginRepository>();
     builder.Services.AddScoped<UserRepository>();
     var app = builder.Build();
 

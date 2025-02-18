@@ -3,7 +3,7 @@ using Pokedex;
 using Pokedex.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-public class UserRepository : ILoginInterface
+public class UserRepository : IUserInterface
 {
     private readonly Context _context;
 
@@ -19,6 +19,20 @@ public class UserRepository : ILoginInterface
             var findUser = await _context.Users.FirstOrDefaultAsync(u => u == user);
 
             return findUser;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Erro ao buscar usuário: {ex.Message}", ex);
+        }
+    }
+
+    public async Task<User?> GetUserById(long Id)
+    {
+        try
+        {
+            var User = await _context.Users.FirstOrDefaultAsync(u => u.id == Id);
+
+            return User;
         }
         catch (Exception ex)
         {
